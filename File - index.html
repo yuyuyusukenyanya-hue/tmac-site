@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMAC - Tokyo Martial Arts Club | 東京格闘技サークル</title>
+    <img>
+    <style>
+        /* --- 基本設定 (Reset & Base) --- */
+        :root {
+            --bg-color: #ffffff;
+            --sub-bg-color: #f9f9f9;
+            --text-color: #333333;
+            --accent-color: #000000;
+            --gray-text: #666666;
+            --font-main: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            letter-spacing: 0.05em;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; }
+
+        /* --- レイアウト用クラス --- */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-gray {
+            background-color: var(--sub-bg-color);
+        }
+
+        /* --- タイトル周り --- */
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+            text-align: center;
+            letter-spacing: 0.1em;
+        }
+        
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        /* --- Header / Hero --- */
+        header {
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: var(--bg-color);
+        }
+
+        .hero-logo {
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 0.2em;
+            margin-bottom: 10px;
+        }
+
+        .hero-sub {
+            font-size: 1rem;
+            color: var(--gray-text);
+            margin-bottom: 40px;
+        }
+
+        .hero-msg {
+            font-size: 1.2rem;
+            line-height: 2;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 15px 40px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+        }
+        .btn:hover {
+            opacity: 0.7;
+        }
+
+        /* --- About / Features --- */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .feature-box {
+            background: #fff;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        /* --- Info Table --- */
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .info-table th, .info-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .info-table th {
+            width: 30%;
+            font-weight: normal;
+            color: var(--gray-text);
+        }
+
+        /* --- Lists & Tags --- */
+        .check-list li {
+            position: relative;
+            padding-left: 1.5em;
+            margin-bottom: 10px;
+        }
+        .check-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+
+        .keywords {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* --- Contact --- */
+        .contact-box {
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .contact-note {
+            font-size: 0.9rem;
+            color: var(--gray-text);
+            margin-top: 20px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            font-size: 0.8rem;
+            color: var(--gray-text);
+            background-color: var(--sub-bg-color);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .hero-logo { font-size: 2rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            .info-table th, .info-table td { display: block; width: 100%; }
+            .info-table th { padding-bottom: 5px; border-bottom: none; font-size: 0.9rem;}
+            .info-table td { padding-top: 0; color: #000; font-weight: 500;}
+        }
+    </style>
+</head>
+<body>
+
+ <header>
+        <div class="container">
+            <img src="logo.png" alt="TMAC Logo" style="max-width: 350px; height: auto; margin-bottom: 20px;">
+            
+            
+            
+            <p class="hero-msg">
+                格闘技を、もっと身近に、もっと楽しく。<br>
+                東京・立川エリアを中心に活動する<br>
+                社会人のための格闘技サークルです。
+            </p>
+            <a href="#contact" class="btn">JOIN US</a>
+            <p style="margin-top:20px; font-size:0.9rem;">English Available</p>
+        </div>
+    </header>
+
+    <section class="section section-gray">
+        <div class="container">
+            <h2>CONCEPT</h2>
+            <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                <p><strong>「格闘技を楽しく続けたい人のためのサークル」</strong></p>
+                <br>
+                <p>
+                    ボクシング・キックボクシング・柔術・総合格闘技(MMA)の基礎を中心に練習しています。<br>
+                    勝ち負けや「ガチ」な対抗戦は目的ではありません。<br>
+                    日々の運動不足解消、ストレス発散、そして純粋な技術向上を目指し、<br>
+                    安全第一で汗を流しています。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>GUIDE</h2>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <h3>🔰 初心者の方へ</h3>
+                    <p>メンバーの8割が未経験からのスタートです。<br>体力・年齢・性別は一切問いません。「運動は久しぶり」という方も自分のペースで参加いただけます。見学や体験参加も大歓迎です。</p>
+                </div>
+                <div class="feature-box">
+                    <h3>🥋 経験者の方へ</h3>
+                    <p>ミット打ちや、希望者による軽めのスパーリング（マススパー）も行っています。技術研究やフォームの確認など、楽しむ格闘技を目的としています。教える側に回ってくれる方も大歓迎です。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-gray">
+        <div class="container">
+            <h2>INFORMATION</h2>
+            <table class="info-table">
+                <tr>
+                    <th>サークル名</th>
+                    <td>東京格闘技サークルTMAC - Tokyo Martial Arts Club</td>
+                </tr>
+                <tr>
+                    <th>活動場所</th>
+                    <td>東大和S&D体育館、立川市内の体育館など<br>
+                    <span style="font-size:0.85rem; color:#666;">（国立、国分寺、昭島、小平、府中、八王子などでも活動予定）</span></td>
+                </tr>
+                <tr>
+                    <th>活動日時</th>
+                    <td>
+                        水曜：19:30 - 21:00 (月・火の場合もあり)<br>
+                        土曜：19:30 - 21:00 または 日曜：17:00 - 18:30<br>
+                        <span style="font-size:0.85rem;">※週1〜2回、自由参加（遅刻早退自由）</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th>メンバー構成</th>
+                    <td>約10名（20代〜40代中心）</td>
+                </tr>
+                <tr>
+                    <th>参加費</th>
+                    <td>1回 1,000円 （体験 500円）</td>
+                </tr>
+                <tr>
+                    <th>持ち物</th>
+                    <td>動きやすい服装、水分、軍手<br><span style="font-size:0.85rem;">（お持ちの方はグローブやレガースなど）</span></td>
+                </tr>
+            </table>
+
+            <div style="margin-top: 60px;">
+                <h3>こんな人におすすめ</h3>
+                <ul class="check-list">
+                    <li>格闘技に興味がある・やってみたい</li>
+                    <li>運動を始めたいけどジムは敷居が高い</li>
+                    <li>社会人になって体を動かす機会が減った</li>
+                    <li>楽しく安全な環境で練習したい</li>
+                    <li>K-1, RIZIN, PRIDE, UFC, プロレスなどが好き</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <div class="container">
+            <h2>CONTACT</h2>
+            <div class="contact-box">
+                <p>少しでも興味があれば、お気軽にご連絡ください！<br>質問だけでも大歓迎です。</p>
+                <br>
+                <p>参加希望の方は下記をお知らせください：<br><strong>お名前 / 性別 / 年齢 / 格闘技経験の有無</strong></p>
+                
+                <a href="mailto:yuyuyusukenyanya@gmail.com" class="btn">お問い合わせはこちら</a>
+                
+                <p class="contact-note">
+                    English available. Ask me if you don't speak Japanese.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Tokyo Martial Arts Club (TMAC). All Rights Reserved.</p>
+            <div class="keywords">
+                Target Area: Tachikawa, Higashiyamato, Kunitachi, Kokubunji, Akishima, Kodaira, Fuchu, Hachioji
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
